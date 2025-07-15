@@ -1,0 +1,37 @@
+{
+  "aws_access_key": {
+    "regex": "AKIA[0-9A-Z]{16}",
+    "description": "AWS Access Key ID",
+    "severity": "high"
+  },
+  "aws_secret_key": {
+    "regex": "([^A-Za-z0-9/+=]|^)aws_secret_access_key.?[=:\"']{1,3}\\s*([A-Za-z0-9/+=]{40})([^A-Za-z0-9/+=]|$)",
+    "description": "AWS Secret Access Key",
+    "severity": "high"
+  },
+  "slack_token": {
+    "regex": "xox[baprs]-[0-9a-zA-Z]{10,48}",
+    "description": "Slack API Token",
+    "severity": "high"
+  },
+  "google_api_key": {
+    "regex": "AIza[0-9A-Za-z-_]{35}",
+    "description": "Google API Key",
+    "severity": "medium"
+  },
+  "private_key": {
+    "regex": "-----BEGIN (RSA|DSA|EC|PGP|OPENSSH|PRIVATE) KEY-----",
+    "description": "Private Key Block",
+    "severity": "high"
+  },
+  "jwt_token": {
+    "regex": "eyJ[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+\\.[A-Za-z0-9-_]+",
+    "description": "JWT Token",
+    "severity": "medium"
+  },
+  "password_assignment": {
+    "regex": "(password|passwd|pwd)\\s*[:=]\\s*['\"]?[A-Za-z0-9@#$%^&+=!]{6,32}['\"]?",
+    "description": "Generic password assignment",
+    "severity": "low"
+  }
+}

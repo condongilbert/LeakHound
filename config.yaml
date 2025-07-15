@@ -1,0 +1,48 @@
+# config.yaml
+
+# 🔍 Paths and Filters
+scan_path: "./"
+exclude_patterns:
+  - "*.md"
+  - "*.log"
+  - "__pycache__/"
+  - "tests/"
+  - ".git/"
+  - "node_modules/"
+
+# 📜 Rule Configuration
+rules_file: "rules.json"
+custom_rules_file: "custom_rules.json"
+use_entropy: true
+entropy_threshold: 4.5
+
+# 🚨 Notifications
+notifications:
+  enabled: true
+  methods:
+    - slack
+    - email
+  slack_webhook: "https://hooks.slack.com/services/XXX/YYY/ZZZ"
+  email:
+    from: "alerts@leakhound.dev"
+    to: "devops@company.com"
+    smtp_server: "smtp.mailserver.com"
+    port: 587
+    use_tls: true
+    username: "alerts"
+    password: "env:SMTP_PASSWORD"
+
+# 📄 Reporting
+report_format: "markdown"  # Options: markdown, json, html
+report_output_path: "./reports/latest.md"
+timestamp_reports: true
+
+# 🧪 Git Hook Settings
+git_hooks:
+  enabled: true
+  block_on_leak: true
+  severity_threshold: "medium"  # Options: low, medium, high
+
+# ⚙️ Misc
+debug_mode: false
+log_file: "./logs/leakhound.log"
