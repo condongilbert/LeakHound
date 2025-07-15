@@ -1,0 +1,6 @@
+pyyaml>=6.0
+click>=8.1
+rich>=13.5      # Optional: for pretty CLI output
+yara-python>=4.3.1  # Optional: if you plan to integrate YARA rule scanning
+jinja2>=3.1     # Optional: for future HTML report templates
+watchdog>=4.0   # Optional: if you add real-time file monitoring
